@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<title>🩷Valentine Week Surprise Only For Meera 💘</title>
+
+<!-- ================= CSS START ================= -->
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+#noBtn{
+    position:absolute;
+    background:white;
+    color:#e91e63;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+body{
+    background:linear-gradient(to right,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* Header */
+header{
+    padding:40px;
+    background:rgba(0,0,0,0.2);
+}
+header h1{
+    font-size:3em;
+}
+header p{
+    margin-top:10px;
+    font-size:1.2em;
+}
+
+/* Day sections */
+.day{
+    margin:40px auto;
+    padding:40px;
+    width:85%;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+.day:hover{
+    transform:scale(1.05);
+}
+.day h2{
+    font-size:2.2em;
+    margin-bottom:15px;
+}
+.day p{
+    font-size:1.3em;
+}
+
+/* Colors */
+.rose{background:#ff4d6d;}
+.propose{background:#ff6f91;}
+.chocolate{background:#6d4c41;}
+.teddy{background:#f48fb1;}
+.promise{background:#ba68c8;}
+.hug{background:#4dd0e1;}
+.kiss{background:#082298;}
+.valentine{background:#e91e63;}
+
+/* Hidden Message */
+.hidden{
+    margin:40px;
+}
+.secret{
+    opacity:0;
+    font-size:1.6em;
+    transition:0.5s;
+}
+.hidden:hover .secret{
+    opacity:1;
+}
+
+/* Gallery */
+.gallery img{
+    width:200px;
+    margin:10px;
+    border-radius:15px;
+    transition:0.3s;
+}
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* Button */
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:1.1em;
+    cursor:pointer;
+    background:white;
+    color:#e91e63;
+    transition:0.3s;
+}
+button:hover{
+    transform:scale(1.1);
+}
+
+/* Popup */
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+.popup-content{
+    background:#ff4081;
+    padding:40px;
+    border-radius:20px;
+    width:80%;
+    max-width:400px;
+    margin:15% auto;
+}
+
+/* Hearts animation */
+.hearts span{
+    position:fixed;
+    bottom:-20px;
+    animation:float 6s linear infinite;
+    font-size:24px;
+}
+@keyframes float{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-100vh);opacity:0;}
+}
+
+footer{
+    padding:20px;
+    background:rgba(0,0,0,0.2);
+    margin-top:30px;
+}
+button {
+    min-width: 120px;
+    min-height: 45px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.gift {
+    font-size: 40px;
+}
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 320px;
+}
+
+
+</style>
+<!-- ================= CSS END ================= -->
+
+</head>
+<body>
+
+<!-- Background Music (replace music.mp3 if needed) -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Floating Hearts -->
+<div class="hearts">
+    <span style="left:10%">💖</span>
+    <span style="left:30%">💕</span>
+    <span style="left:50%">💘</span>
+    <span style="left:70%">💝</span>
+    <span style="left:90%">❤️</span>
+</div>
+
+<header>
+    <h1>💘 Valentine Week Celebration 💘</h1>
+    <p>7 Days • 7 Surprises • One Special You ❤️</p>
+</header>
+
+<section class="day rose">
+    <h2>🌹 Rose Day</h2>
+    <p>You make my life bloom like a rose 🌹</p>
+    <div class="gift" onclick="openGift('rose')">🎁</div>
+
+</section>
+
+<section class="day propose">
+    <h2>💍 Propose Day</h2>
+    <p>Will you always stay in my heart? 💖</p>
+    <div class="gift" onclick="openGift('propose')">🎁</div>
+
+</section>
+
+<section class="day chocolate">
+    <h2>🍫 Chocolate Day</h2>
+    <p>You’re sweeter than any chocolate 🍫</p>
+    <div class="gift" onclick="openGift('Chocolate')">🎁</div>
+</section>
+
+<section class="day teddy">
+    <h2>🧸 Teddy Day</h2>
+    <p>This teddy carries my hugs for you 🤗</p>
+    <div class="gift" onclick="openGift('teddy')">🎁</div>
+</section>
+
+<section class="day promise">
+    <h2>🤞 Promise Day</h2>
+    <p>I promise to never give up on us 💞</p>
+    <div class="gift" onclick="openGift('promise')">🎁</div>
+</section>
+
+<section class="day hug">
+    <h2>🤗 Hug Day</h2>
+    <p>A warm hug just for you 🫂</p>
+    <div class="gift" onclick="openGift('hug')">🎁</div>
+</section>
+
+
+<section class="day Kiss">
+    <h2>💋 Kiss Day</h2>
+    <p>A kiss sealed with love 💋</p>
+    <div class="gift" onclick="openGift('kiss')">🎁</div>
+</section>
+
+
+<section class="hidden">
+    <h2>👀 Hover to Reveal</h2>
+    <p class="secret">You are the best thing that ever happened to me MEERA ❤️</p>
+</section>
+
+<section class="gallery">
+    <h2>📸 Our Memories</h2>
+    <img src="c:\Users\HP\OneDrive\画像\Screenshots\Screenshot 2025-10-08 204307.png">
+    <img src="c:\Users\HP\OneDrive\画像\Screenshots\Screenshot 2025-11-02 225920.png">
+    <img src="c:\Users\HP\OneDrive\画像\Screenshots\Screenshot 2025-10-14 204658.png">
+    <img src="c:\Users\HP\OneDrive\画像\Screenshots\Screenshot 2025-10-08 204902.png">
+    <img src="c:\Users\HP\OneDrive\画像\Saved Pictures\WhatsApp Image 2026-02-07 at 11.02.46.jpeg">
+    <img src="c:\Users\HP\OneDrive\画像\Saved Pictures\WhatsApp Image 2026-02-07 at 11.02.45.jpeg">
+    <img src="c:\Users\HP\OneDrive\画像\Saved Pictures\WhatsApp Image 2026-02-07 at 11.02.47.jpeg">
+</section>
+
+<section class="day valentine">
+    <h2>❤️ Valentine’s Day</h2>
+    <p>You are my forever 💘</p>
+    <button onclick="openSurprise()">🎁 Final Surprise</button>
+</section>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>💖 I Love You 💖</h2>
+        <p>Will you be my Valentine forever? 🌹</p>
+        <button onclick="acceptLove()">💞 Yes 💞</button>
+<button id="noBtn">❌ No</button>
+
+        
+    </div>
+</div>
+
+<footer>
+    <p>Made with ❤️ by Anish</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+<!-- ================= JS START ================= -->
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+const texts = [
+    "❌ No",
+    "Give me One chance! 🙏",
+    "Pyaar se rakhunga MEERA plz",
+    "😜 Missed!",
+    "😂 Try again",
+    "🙈 Nope!",
+    "💔 Really?",
+    "😏 Still No?",
+    "🤭 Almost!",
+    "❤️ Just say YES MEERA!💋",
+    "😒 MANA mt karo  Say yess"
+];
+
+let index = 0;
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+function moveNo(){
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+
+    const maxX = window.innerWidth - btnWidth - 10;
+    const maxY = window.innerHeight - btnHeight - 10;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    index = (index + 1) % texts.length;
+    noBtn.innerText = texts[index];
+}
+
+
+function acceptLove(){
+
+    const duration = 2000;
+    const end = Date.now() + duration;
+
+    (function frame(){
+        confetti({
+            particleCount: 20,
+            angle: 60,
+            spread: 120,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 20,
+            angle: 120,
+            spread: 120,
+            origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
+
+    // BIG CENTER BLAST
+    confetti({
+        particleCount: 300,
+        spread: 180,
+        startVelocity: 60,
+        origin: { x: 0.5, y: 0.5 }
+    });
+
+    setTimeout(() => {
+        alert("Yayyy! 💖 Mujhe pata tha Pyaar karti ho MEERA jiiii 😘");
+        closeSurprise();
+    }, 800);
+}
+
+
+function openSurprise(){
+    document.getElementById("popup").style.display = "block";
+}
+
+function closeSurprise(){
+    document.getElementById("popup").style.display = "none";
+}
+
+function openGift(day){
+    const messages = {
+        rose: "🌹 A rose for the most beautiful Khadoos ❤️",
+        propose: "💍 My heart proposed long ago BAS ek baar Han kar do  💖",
+        Chocolate: "🍫 Sweet like you!               love You",
+        teddy: "🧸 Sending you my cuddles Jaise Raat me Sote Hain 🤗",
+        promise: "🤞 I promise to stand by you always Bas Shaadi kar lo 💞",
+        hug: "🤗 A tight hug just for you! Usse Neend achhe aati haii",
+        kiss: "💋 One kiss sealed with love 😘",
+        valentine: "💘 You are my forever Valentine 💖"
+    };
+
+    alert(messages[day]);
+}
+
+</script>
+
+    
+<!-- ================= JS END ================= -->
+
+</body>
+</html>
